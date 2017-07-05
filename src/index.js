@@ -1,8 +1,12 @@
+/* eslint react/jsx-filename-extension: 0 */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+import './style.css';
+
+import HomePage from './components/pages/Home';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<HomePage />, document.getElementById('root'));
 registerServiceWorker();
