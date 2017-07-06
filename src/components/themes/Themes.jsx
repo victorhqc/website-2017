@@ -4,22 +4,24 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import {
-  getColor,
+  getColorByPosition,
+  getColorByName,
 
   GRID,
 } from '../../constants/layout';
 
 const generalStyle = {
   colors: {
-    primary: getColor('fountainBlue'),
-    secondary: getColor('iceCold'),
+    primary: getColorByPosition(0),
+    secondary: getColorByPosition(1),
 
-    complement: getColor('mishka'),
-    secondaryComplement: getColor('amethystSmoke'),
+    complement: getColorByPosition(2),
+    secondaryComplement: getColorByPosition(3),
 
-    black: getColor('almostBlack'),
-    white: getColor('almostWhite'),
-    grey: getColor('pigeonPost'),
+    accent: getColorByPosition(4),
+
+    black: getColorByPosition(5),
+    white: getColorByPosition(6),
   },
 
   fontSize: 16,
@@ -28,29 +30,29 @@ const generalStyle = {
   gridUnit: GRID.unit,
 };
 
-const greenTheme = {
+const darkTheme = {
   ...generalStyle,
 
-  color: getColor('almostWhite'),
+  color: getColorByName('almostWhite'),
 };
 
 const lightTheme = {
   ...generalStyle,
 
-  color: getColor('almostBlack'),
+  color: getColorByName('almostBlack'),
 };
 
-export const GreenTheme = props => (
-  <ThemeProvider theme={greenTheme}>
+export const DarkTheme = props => (
+  <ThemeProvider theme={darkTheme}>
     {props.children}
   </ThemeProvider>
 );
 
-GreenTheme.defaultProps = {
+DarkTheme.defaultProps = {
   children: null,
 };
 
-GreenTheme.propTypes = {
+DarkTheme.propTypes = {
   children: PropTypes.node,
 };
 

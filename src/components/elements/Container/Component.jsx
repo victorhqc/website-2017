@@ -1,19 +1,11 @@
 import styled from 'styled-components';
 
-const importantText = (props) => {
+const getImportantText = (props) => {
   if (props.important) {
     return 20;
   }
 
   return props.theme.fontSize;
-};
-
-const textAlign = (props) => {
-  if (props.textAlign) {
-    return props.textAlign;
-  }
-
-  return '';
 };
 
 const getPadding = (props) => {
@@ -27,12 +19,12 @@ const getPadding = (props) => {
 const Container = styled.div`
   color: ${props => props.theme.color};
   font-family: ${props => props.theme.fontFamily};
-  text-align: ${props => textAlign(props)};
+  text-align: ${props => props.textAlign || ''};
 
   padding: ${props => getPadding(props)}px;
 
   p {
-    font-size: ${importantText}px;
+    font-size: ${getImportantText}px;
     font-weight: 300;
   }
 `;

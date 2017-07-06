@@ -7,10 +7,21 @@ import Container from '../Container';
 const primaryColor = ({ theme }) => theme.colors.primary;
 const secondaryColor = ({ theme }) => theme.colors.secondary;
 
+const getBackground = (props) => {
+  if (!props.coverImage) {
+    return `linear-gradient(-45deg, ${primaryColor(props)}, ${secondaryColor(props)})`;
+  }
+
+  return `
+    url(${props.coverImage}), linear-gradient(-45deg, ${primaryColor(props)}, ${secondaryColor(props)})
+    `;
+};
+
 const Header = styled.div`
   background: ${primaryColor};
   background: linear-gradient(left top, ${primaryColor}, ${secondaryColor});
-  background: linear-gradient(to bottom right, ${primaryColor}, ${secondaryColor});
+  background: ${getBackground};
+  background-blend-mode: overlay;
 
   height: 100vh;
   text-align: center;
@@ -29,9 +40,9 @@ const Header = styled.div`
   }
 `;
 
-const HeaderComponent = props => (
-  <Header>
-    <Container>{props.children}</Container>
+const HeaderComponent = ({ children, ...props }) => (
+  <Header {...props}>
+    <Container>{children}</Container>
   </Header>
 );
 

@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 import distanceInWords from 'date-fns/distance_in_words';
 import distanceInWordsStrict from 'date-fns/distance_in_words_strict';
 
-import { GreenTheme } from '../../themes';
+import { LightTheme } from '../../themes';
 
 import Row from '../../elements/Row';
 import Column from '../../elements/Column';
 
 import Header from '../../elements/Header';
 import Container from '../../elements/Container';
+
+import berlinImage from '../../../assets/berlin_1.jpeg';
 
 const today = new Date();
 
@@ -33,8 +35,8 @@ class HomePage extends Component {
 
   render() {
     return (
-      <GreenTheme>
-        <Header>
+      <LightTheme>
+        <Header coverImage={berlinImage}>
           <Row>
             <Column grow={2} basis="100%">
               <h1>
@@ -64,7 +66,7 @@ class HomePage extends Component {
             </Column>
           </Row>
         </Header>
-      </GreenTheme>
+      </LightTheme>
     );
   }
 }
