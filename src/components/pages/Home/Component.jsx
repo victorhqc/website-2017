@@ -10,6 +10,7 @@ import Column from '../../elements/Column';
 
 import Header from '../../elements/Header';
 import Container from '../../elements/Container';
+import Link from '../../elements/Link';
 
 import berlinImage from '../../../assets/berlin_1.jpeg';
 
@@ -44,7 +45,9 @@ class HomePage extends Component {
                 <br />
                 <small>Javascript Fullstack Developer</small>
                 <br />
-                <small>@victorhqc</small>
+                <small>
+                  <Link href="https://github.com/victorhqc">@victorhqc</Link>
+                </small>
               </h1>
             </Column>
             <Column grow={1}>
