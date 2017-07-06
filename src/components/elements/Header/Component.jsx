@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import Container from '../Container';
 
-const primaryColor = ({ theme }) => theme.colors.primary;
-const secondaryColor = ({ theme }) => theme.colors.secondary;
+const primaryColor = ({ theme }) => theme.colors.complement;
+const secondaryColor = ({ theme }) => theme.colors.secondaryComplement;
 
 const getBackground = (props) => {
   if (!props.coverImage) {

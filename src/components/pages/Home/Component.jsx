@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import distanceInWords from 'date-fns/distance_in_words';
 import distanceInWordsStrict from 'date-fns/distance_in_words_strict';
 
-import { LightTheme } from '../../themes';
+import { DarkTheme } from '../../themes';
 
 import Row from '../../elements/Row';
 import Column from '../../elements/Column';
@@ -35,7 +35,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <LightTheme>
+      <DarkTheme>
         <Header coverImage={berlinImage}>
           <Row>
             <Column grow={2} basis="100%">
@@ -66,7 +66,7 @@ class HomePage extends Component {
             </Column>
           </Row>
         </Header>
-      </LightTheme>
+      </DarkTheme>
     );
   }
 }
