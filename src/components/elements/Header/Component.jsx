@@ -7,6 +7,8 @@ import Container from '../Container';
 const primaryColor = ({ theme }) => theme.colors.complement;
 const secondaryColor = ({ theme }) => theme.colors.secondaryComplement;
 
+const mobileSize = ({ theme }) => theme.sizes.mobile;
+
 const getBackground = (props) => {
   if (!props.coverImage) {
     return `linear-gradient(-45deg, ${primaryColor(props)}, ${secondaryColor(props)})`;
@@ -22,6 +24,11 @@ const Header = styled.div`
   background: linear-gradient(left top, ${primaryColor}, ${secondaryColor});
   background: ${getBackground};
   background-blend-mode: overlay;
+  background-size: cover;
+
+  @media (max-width: ${mobileSize}px) {
+    background-position: 75%;
+  }
 
   height: 100vh;
   text-align: center;

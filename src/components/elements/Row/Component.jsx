@@ -21,6 +21,10 @@ const Row = styled.div`
 
   flex-direction: ${props => getFlexDirection(props)};
   flex-wrap: ${props => getWrap(props)};
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export default Row;

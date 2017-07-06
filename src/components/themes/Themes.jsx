@@ -24,6 +24,10 @@ const generalStyle = {
     white: getColorByPosition(6),
   },
 
+  sizes: {
+    mobile: GRID.mobileWidth,
+  },
+
   fontSize: 16,
   fontFamily: '\'Roboto\', sans-serif',
 

@@ -40,4 +40,5 @@ export const getColorByPosition = position => (COLORS[position] || {}).color || 
 
 export const GRID = {
   unit: 24,
+  mobileWidth: 768,
 };
