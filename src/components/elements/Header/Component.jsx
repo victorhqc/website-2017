@@ -12,8 +12,12 @@ const Header = styled.div`
   background: linear-gradient(left top, ${primaryColor}, ${secondaryColor});
   background: linear-gradient(to bottom right, ${primaryColor}, ${secondaryColor});
 
-  height: 300px;
+  height: 100vh;
   text-align: center;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
   h1 {
     font-size: 48px;
